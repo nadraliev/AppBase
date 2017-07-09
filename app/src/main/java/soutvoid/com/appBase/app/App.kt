@@ -5,11 +5,13 @@ import com.crashlytics.android.Crashlytics
 import io.fabric.sdk.android.Fabric
 import com.uphyca.stetho_realm.RealmInspectorModulesProvider
 import com.facebook.stetho.Stetho
+import com.github.anrwatchdog.ANRWatchDog
 import io.realm.Realm
 import soutvoid.com.appBase.app.dagger.AppComponent
 import soutvoid.com.appBase.app.dagger.AppModule
 import soutvoid.com.appBase.app.dagger.DaggerAppComponent
 import soutvoid.com.appBase.app.log.Logger
+import soutvoid.com.appBase.app.log.RemoteLogger
 
 
 class App : Application() {
@@ -20,6 +22,7 @@ class App : Application() {
         super.onCreate()
 
         initFabric()
+        initAnrWatchDog()
         initLogger()
         initInjector()
         initStetho()
@@ -28,6 +31,10 @@ class App : Application() {
 
     fun initFabric() {
         Fabric.with(this, Crashlytics())
+    }
+
+    private fun initAnrWatchDog() {
+        ANRWatchDog().setReportMainThreadOnly().setANRListener( RemoteLogger::logError ).start()
     }
 
     fun initLogger() {
