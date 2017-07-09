@@ -13,7 +13,7 @@ import rx.schedulers.Schedulers
 import soutvoid.com.appBase.ui.common.error.ErrorHandler
 
 
-class BasePresenter<V : BaseView>(private val errorHandler: ErrorHandler) : MvpRxPresenter<V>() {
+open class BasePresenter<V : BaseView>(private val errorHandler: ErrorHandler) : MvpRxPresenter<V>() {
 
     override fun <T> subscribe(observable: Observable<T>,
                                onNext: Action1<T>,
