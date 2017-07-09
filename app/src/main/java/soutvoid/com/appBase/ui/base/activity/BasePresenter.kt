@@ -19,7 +19,7 @@ class BasePresenter<V : BaseView>(private val errorHandler: ErrorHandler) : MvpR
                                onNext: Action1<T>,
                                onError: Action1<Throwable>): Subscription {
         var observableNew = observable
-        observableNew = observable.observeOn(AndroidSchedulers.mainThread(), true)
+        observableNew = observableNew.observeOn(AndroidSchedulers.mainThread(), true)
         return super.subscribe(observableNew, onNext, onError)
     }
 

@@ -26,9 +26,9 @@ object ObservableUtil {
     fun <T, R> combineLatestDelayError(scheduler: Scheduler,
                                        sources: List<Observable<out T>>,
                                        combineFunction: FuncN<out R>): Observable<R> {
-        var sources = sources
-        sources = toParallel(sources, scheduler)
-        return Observable.combineLatestDelayError(sources, combineFunction)
+        var sourcesNew = sources
+        sourcesNew = toParallel(sourcesNew, scheduler)
+        return Observable.combineLatestDelayError(sourcesNew, combineFunction)
     }
 
     fun <T1, T2, R> combineLatestDelayError(scheduler: Scheduler, o1: Observable<out T1>, o2: Observable<out T2>, combineFunction: Func2<in T1, in T2, out R>): Observable<R> {
