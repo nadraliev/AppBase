@@ -61,9 +61,9 @@ dependencies {
 
     //libraries versions
     def daggerVersion = "2.11"
-    def ferroMvpVersion = "2.0.0"
+    def ferroMvpVersion = "1.1.2"
     def appcompatVersion = "26.0.0-alpha1"
-    def rxjavaVersion = "2.1.1"
+    def rxjavaVersion = "1.3.0"
     def retrofitVersion = "2.3.0"
     def okhttpVersion = "3.8.1"
     def glideVersion = "4.0.0-RC1"
@@ -72,11 +72,11 @@ dependencies {
     //main
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile "com.google.dagger:dagger:${daggerVersion}"
-    compile "com.agna.ferro:ferro-rx:${ferroMvpVersion}"
-    compile "com.agna.ferro:ferro-mvp-rx:1.0.2"
+    compile "com.agna.ferro:ferro-mvp-rx:${ferroMvpVersion}"
 
-    compile "io.reactivex.rxjava2:rxjava:${rxjavaVersion}"
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    compile "io.reactivex:rxjava:${rxjavaVersion}"
+    compile 'io.reactivex:rxandroid:1.2.1'
     compile "com.android.support:appcompat-v7:${appcompatVersion}"
     compile "com.android.support:support-v4:${appcompatVersion}"
 

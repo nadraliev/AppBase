@@ -2,7 +2,6 @@ package soutvoid.com.appBase.interactor.common.network
 
 import com.agna.ferro.mvp.component.scope.PerApplication
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -12,7 +11,6 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import soutvoid.com.appBase.interactor.common.network.cache.RequestCacheInterceptor
 import soutvoid.com.appBase.interactor.common.network.cache.ResponseCacheInterceptor
-import soutvoid.com.appBase.interactor.common.network.error.HttpCodes
 import soutvoid.com.appBase.interactor.common.network.request.RequestHeadersInterceptor
 import soutvoid.com.appBase.interactor.network.NetworkConnectionChecker
 import timber.log.BuildConfig

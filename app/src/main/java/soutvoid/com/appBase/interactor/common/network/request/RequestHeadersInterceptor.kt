@@ -1,7 +1,6 @@
 package soutvoid.com.appBase.interactor.common.network.request
 
 import okhttp3.Interceptor
-import okhttp3.Request
 import okhttp3.Response
 
 class RequestHeadersInterceptor : Interceptor {
